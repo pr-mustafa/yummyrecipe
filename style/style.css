@@ -1,0 +1,69 @@
+:root {
+  --background: #0d0d0d;
+}
+body {
+  overflow: hidden;
+  background-color: var(--background);
+}
+.bgColor{
+  background-color: var(--background);
+}
+.main-loading-screen,
+.loading-screen,
+#contentData,
+#HomeScreenPage,
+#SearchPage{
+  background-color: var(--background);
+}
+a:hover {
+  cursor: pointer;
+}
+.slider-container {
+  left: 0;
+  top: 0;
+}
+.slider {
+  width: 260px;
+  background-color: var(--background);
+}
+.toggler {
+  color: var(--background);
+}
+#togglerOpen {
+  cursor: pointer;
+}
+.image-overlay {
+  background-color: rgba(255, 255, 255, 0.616);
+}
+.image-card:hover .image-overlay {
+  cursor: pointer;
+  top: 0;
+}
+.image-overlay {
+  top: 100%;
+  transition: 0.5s;
+}
+.main-loading-screen {
+  display: flex;
+}
+.loading-screen {
+  display: flex;
+}
+.pointer {
+  cursor: pointer;
+}
+#SearchLetterInput::placeholder,
+#SearchNameInput::placeholder {
+  color: white;
+  opacity: 0.5; 
+}
+#SignUp,#SearchPage {
+  display: none;
+}
+#submitBtn:focus{
+background-color: #dc3545;
+color: white;
+}
+#SearchPage{
+  z-index: 99999999;
+}

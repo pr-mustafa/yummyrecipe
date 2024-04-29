@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy</title>
+    <link rel="stylesheet" href="./style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/all.min.css" />
+    <link rel="stylesheet" href="./style/animate.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div
+      class="main-loading-screen position-fixed top-0 start-0 end-0 bottom-0 justify-content-center align-items-center z-3"
+    >
+      <i class="fa fa-spinner fa-spin fa-5x text-white"></i>
+    </div>
+    <div
+      class="slider-container position-fixed d-flex flex-row align-items-center z-2"
+    >
+      <div
+        class="slider d-flex flex-column vh-100 text-white ps-4 pt-4 justify-content-between"
+      >
+        <div class="slider-menu position-relative">
+          <ul class="list-unstyled d-flex flex-column row-gap-3 overflow-hidden">
+            <li class="position-relative" style="top: 300px;">
+              <a
+                my-href="SearchPage"
+                class="text-white text-decoration-none"
+                >Search</a
+              >
+            </li>
+            <li class="position-relative" style="top: 300px;">
+              <a
+                my-href="Categories"
+                class="text-white text-decoration-none"
+                >Categories</a
+              >
+            </li>
+            <li class="position-relative"  style="top: 300px;">
+              <a my-href="Area" class="text-white text-decoration-none"
+                >Area</a
+              >
+            </li>
+            <li class="position-relative"  style="top: 300px;">
+              <a
+                my-href="Ingredients"
+                class="text-white text-decoration-none "
+                >Ingredients</a
+              >
+            </li>
+            <li class="position-relative"  style="top: 300px;">
+              <a
+                my-href="Contact"
+                class=" text-white text-decoration-none"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="navFooter pb-3">
+          <i class="fa-solid fa-brands fa-facebook pointer"></i>
+          <i class="fa-solid fa-brands fa-twitter pointer"></i>
+          <i class="fa-solid fa-globe pointer"></i>
+          <p>Copyright Â© 2019 All Rights Reserved.</p>
+        </div>
+      </div>
+      <div
+        class="toggler d-flex flex-column justify-content-between align-items-center min-vh-100 fw-bolder px-2 bg-white"
+      >
+        <img
+          src="media/logo.png"
+          alt="website logo yummy"
+          width="50px"
+          class="mt-4"
+        />
+        <i class="fa-solid fa-bars fa-2x" id="togglerOpen"></i>
+        <div class="d-flex flex-column pb-3">
+          <i class="fa-solid fa-globe p-1 pointer"></i>
+          <i class="fa-solid fa-share-nodes p-1 pointer"></i>
+        </div>
+      </div>
+    </div>
+    <div class="w-100 bgColor" >
+      <div id="SearchPage" class="container w-75">
+        <div class="row py-4">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control bg-transparent text-white"
+              placeholder="Search by Name"
+              id="SearchNameInput"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              oninput="searchByLetter()"
+              class="form-control bg-transparent text-white"
+              placeholder="Search by First Letter"
+              maxlength="1"
+              id="SearchLetterInput"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="home-screen position-relative min-vh-100" id="HomeScreenPage">
+     
+      <div
+        class="loading-screen position-absolute top-0 bottom-0 start-0 end-0 justify-content-center align-items-center z-1 min-vh-100"
+      >
+        <i class="fa fa-spinner fa-spin fa-5x text-white"></i>
+      </div>
+      <div class="container" id="contentData">
+        <div id="SignUp" class="min-vh-100  justify-content-center align-items-center bgColor">
+          <div class="container w-75 text-center d-flex justify-content-center align-items-center flex-column" >
+            <div class="row g-4" id="formValidate">
+                <div class="col-md-6">
+                    <input id="nameInput" oninput="inputsValidation()" type="text" class="form-control" placeholder="Enter Your Name">
+                    <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Special characters and numbers not allowed
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input id="emailInput" oninput="inputsValidation()" type="email" class="form-control " placeholder="Enter Your Email">
+                    <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Email not valid *exemple@yyy.zzz
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input id="phoneInput" oninput="inputsValidation()" type="text" class="form-control " placeholder="Enter Your Phone">
+                    <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Enter valid Phone Number
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input id="ageInput" oninput="inputsValidation()" type="number" class="form-control " placeholder="Enter Your Age">
+                    <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Enter valid age
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input id="passwordInput" oninput="inputsValidation()" type="password" class="form-control " placeholder="Enter Your Password">
+                    <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Enter valid password *Minimum eight characters, at least one letter and one number:*
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input id="repasswordInput" oninput="inputsValidation()" type="password" class="form-control " placeholder="Repassword">
+                    <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 d-none ">
+                        Enter valid repassword 
+                    </div>
+                </div>
+            </div>
+            <button id="submitBtn" disabled class="btn btn-outline-danger px-2 mt-3 focus-ring focus-ring-danger">Submit</button>
+            </div>
+        </div>
+        <div id="foodRow"></div>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/scripit.js"></script>
+  </body>
+</html>
