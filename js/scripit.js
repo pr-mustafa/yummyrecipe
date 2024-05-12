@@ -179,7 +179,7 @@ async function fetchMeals(value) {
 
         for (let i = 0; i < x; i++) {
             contentText += `
-                <div class="col-md-3">
+                <div class="col-md-3 ">
                     <div onclick="getFoodDetails(${finalResponse.meals[i].idMeal})" id="foodDetails" class="image-card position-relative overflow-hidden rounded-3">
                         <img src="${finalResponse.meals[i].strMealThumb}" alt="" class="food-img img-fluid" />
                             <div
